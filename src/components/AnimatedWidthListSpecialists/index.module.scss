@@ -1,0 +1,131 @@
+@import '/src/variables.module.scss';
+
+.content {
+  display: flex;
+  gap: 2.4rem;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.item {
+  min-height: 50rem;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  transition: 1s ease-in-out all;
+  display: grid;
+  position: relative;
+  border-radius: 1.2rem;
+  overflow: hidden;
+}
+
+.itemImageWrapper {
+  border-radius: 1.2rem;
+  background: $background-accent;
+}
+
+.itemImage {
+  z-index: 2;
+  position: relative;
+  transition: 1s ease-in-out all;
+  border-radius: 1.2rem;
+  width: 100%;
+  height: 41.2rem;
+  object-fit: cover;
+}
+
+.itemContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  box-sizing: border-box;
+  background: $background-accent;
+  position: absolute;
+  width: 22.8rem;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 0 1.2rem 1.2rem 0;
+  padding: 1.2rem 1.4rem 1.2rem 2.4rem;
+  transition: 1s ease-in-out all;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.title {
+  margin: 0 0 0.8rem;
+}
+
+.speciality {
+  margin: 0;
+}
+
+.text {
+  margin: 1.6rem 0;
+}
+
+.itemInactive {
+  grid-template-columns: 1fr;
+  max-width: 19rem;
+}
+
+.itemInactive:hover.item {
+  transform: scale(1.025);
+}
+
+.subtitle {
+  color: #7d868c;
+  margin: 0 0 0.4rem;
+}
+
+.itemActive {
+  max-width: 24.3rem;
+  cursor: auto;
+  padding-right: 22.8rem;
+
+  .itemImage {
+    height: 100%;
+  }
+
+  .itemContent {
+    padding: 1.6rem;
+    left: 23.6rem;
+  }
+}
+
+.itemBottomContentTitle {
+  margin: 0 0 0.8rem;
+}
+
+.itemBottomContent {
+  box-sizing: border-box;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  width: 19rem;
+  padding: 1.2rem;
+}
+
+.itemInactive {
+  .itemBottomContent {
+    opacity: 1;
+  }
+}
+
+.itemBottomContentTitleSubtitle {
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; // количество строк
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: #7d868c;
+}
+
+.itemBottomContentTitle,
+.itemBottomContentTitleSubtitle {
+  box-sizing: border-box;
+  hyphens: auto;
+}

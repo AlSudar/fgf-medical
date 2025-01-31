@@ -1,0 +1,17 @@
+@import '/src/variables.module.scss';
+
+.title {
+  margin: 0 0 2.4rem;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 0 0 24px;
+  }
+}
+
+.primary {
+  color: $text-primary;
+}
+
+.secondary {
+  color: $text-secondary-light;
+}

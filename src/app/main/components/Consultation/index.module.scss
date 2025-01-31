@@ -1,0 +1,58 @@
+@import '/src/variables.module.scss';
+
+.sectionWrapper {
+  margin-bottom: 12rem;
+  background: $background-primary;
+  color: $text-secondary-light;
+
+  @media screen and (max-width: $tablet-width) {
+    margin-bottom: 60px;
+  }
+}
+
+.section {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 6.6rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8.8rem;
+  align-items: center;
+
+  @media screen and (max-width: $tablet-width) {
+    padding: 24px 16px;
+    gap: 12px;
+    grid-template-columns: 1fr;
+  }
+}
+
+.desc {
+  margin: 0;
+
+  @media screen and (max-width: $tablet-width) {
+    max-width: 576px;
+  }
+}
+
+.title {
+  font-weight: 400 !important;
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  @media screen and (max-width: $tablet-width) {
+    gap: 12px;
+  }
+}
+
+.button {
+  width: fit-content;
+
+  @media screen and (max-width: $mobile-width) {
+    width: 100%;
+  }
+}

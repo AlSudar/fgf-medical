@@ -1,0 +1,51 @@
+@import '/src/variables.module.scss';
+
+.section {
+  margin: 0 0 12rem;
+  background: url('/pages/about/banner/banner-desktop.png') no-repeat center;
+  background-size: cover;
+  padding: 5.6rem 0;
+
+  @media screen and (max-width: $tablet-width) {
+    padding: 24px 44px;
+    margin: 0 0 60px;
+    background: url('/pages/about/banner/banner-tablet.png') no-repeat center;
+    background-size: cover;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    padding: 24px 16px;
+    background: url('/pages/about/banner/banner-mobile.png') no-repeat center;
+    background-size: cover;
+  }
+}
+
+.desc {
+  color: $text-secondary-light;
+  max-width: 57.6rem;
+  margin: 0 0 2.4rem;
+
+  @media screen and (max-width: $tablet-width) {
+    max-width: 80%;
+    margin: 0 0 12px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    max-width: 100%;
+  }
+}
+
+.desc,
+.button {
+  margin-left: 19rem;
+
+  @media screen and (max-width: $tablet-width) {
+    margin-left: 0;
+  }
+}
+
+.button {
+  @media screen and (max-width: $mobile-width) {
+    width: 100%;
+  }
+}

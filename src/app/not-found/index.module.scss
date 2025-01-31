@@ -1,0 +1,86 @@
+@import '/src/variables.module.scss';
+
+.fWordReversed {
+  top: 14rem;
+  right: 4.2rem;
+  z-index: -1;
+
+  @media screen and (max-width: $tablet-width) {
+    right: 0;
+    top: 16px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    top: -24px;
+    right: 10px;
+  }
+}
+
+.gWord {
+  bottom: -20rem;
+  left: -8.6rem;
+  z-index: -1;
+
+  @media screen and (max-width: $tablet-width) {
+    left: -44px;
+    bottom: -100px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    left: -56px;
+    bottom: -80px;
+  }
+}
+
+.sectionWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.section {
+  max-width: 57.2rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 40rem 0 26rem;
+  box-sizing: border-box;
+  justify-content: center;
+  flex-direction: column;
+
+  @media screen and (max-width: $tablet-width) {
+    max-width: $content-width-mobile;
+    padding: 286px 16px 140px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    max-width: $content-width-mobile;
+    padding: 200px 16px 130px;
+  }
+}
+
+.sectionImage {
+  width: 29.8rem;
+  height: 14rem;
+  margin: 0 0 2.4rem;
+  display: block;
+
+  @media screen and (max-width: $tablet-width) {
+    width: 298px;
+    height: 140px;
+    margin: 0 0 24px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    width: 160px;
+    height: 75px;
+  }
+}
+
+.desc {
+  text-align: center;
+  margin: 0 0 2.4rem;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 0 0 24px;
+  }
+}

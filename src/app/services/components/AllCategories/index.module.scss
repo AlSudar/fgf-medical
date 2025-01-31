@@ -1,0 +1,132 @@
+@import '/src/variables.module.scss';
+
+.section:last-of-type {
+  padding: 8rem 0;
+
+  @media screen and (max-width: $tablet-width) {
+    padding: 40px 16px 0;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    padding: 60px 16px 0;
+  }
+}
+
+.section {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 8rem 0 0;
+  max-width: $content-width;
+
+  @media screen and (max-width: $tablet-width) {
+    max-width: $content-width-mobile;
+    padding: 40px 16px 0;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    padding: 60px 16px 0;
+  }
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.4rem;
+
+  @media screen and (max-width: $tablet-width) {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.listItem {
+  border-radius: 1.2rem;
+  padding: 2.4rem;
+  box-sizing: border-box;
+  min-height: 14rem;
+
+  @media screen and (max-width: $tablet-width) {
+    border-radius: 12px;
+    padding: 16px;
+    min-height: 156px;
+  }
+}
+
+.section:nth-of-type(3n + 1) {
+  .listItem {
+    color: $text-secondary-light;
+    background: #9d8e8b;
+  }
+
+  .listItemButton {
+    background: #3e3937;
+  }
+}
+
+.section:nth-of-type(3n + 2) {
+  .listItem {
+    color: $text-primary;
+    background: $background-accent;
+  }
+
+  .listItemButton {
+    background: #a9a19e;
+  }
+}
+
+.section:nth-of-type(3n + 3) {
+  .listItem {
+    background: #cabdba;
+    color: $text-primary;
+  }
+
+  .listItemButton {
+    background: #766e6c;
+  }
+}
+
+.listItemTitle {
+  margin: 0 0 1rem;
+}
+
+.listItemButton {
+  padding: 1.4rem 1.7rem !important;
+  width: fit-content;
+  margin: auto 0 0 auto;
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: $tablet-width) {
+    padding: 14px 17px !important;
+  }
+}
+
+.listItemLink {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.listItemButtonImage {
+  width: 0.6rem;
+  height: 1.1rem;
+  object-fit: cover;
+
+  @media screen and (max-width: $tablet-width) {
+    width: 6px;
+    height: 11px;
+  }
+}
+
+.listEven .listItem:last-of-type {
+  @media screen and (max-width: $mobile-width) {
+    grid-column: 1/3;
+  }
+}

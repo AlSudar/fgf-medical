@@ -1,0 +1,90 @@
+@import '/src/variables.module.scss';
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fade {
+  position: absolute;
+}
+
+.bottom {
+  background: $background-default;
+  position: absolute;
+  height: 5%;
+  background: #f8f5f3;
+  bottom: 0;
+  width: 100%;
+  right: 11.5%;
+}
+
+.center {
+  position: absolute;
+  height: 6%;
+  width: 100%;
+  background: $background-default;
+  bottom: 49%;
+  right: 14.5%;
+}
+
+.right {
+  top: 0;
+  right: 0;
+  position: absolute;
+  background: $background-default;
+  width: 14.5%;
+  height: 100%;
+}
+
+.active .right {
+  animation: right 1s linear 1s 1 normal;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+  animation-duration: 1s;
+}
+
+.active .bottom {
+  animation: bottom 1s linear 1s 1 normal;
+  animation-fill-mode: forwards;
+  animation-delay: 1.5s;
+  animation-duration: 1s;
+}
+
+.active .center {
+  animation: center 1s linear 1s 1 normal;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+  animation-duration: 1s;
+}
+
+@keyframes bottom {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes right {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes center {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}

@@ -1,0 +1,70 @@
+@import '/src/variables.module.scss';
+
+.section {
+  max-width: $content-width;
+  margin: 0 auto 8rem;
+
+  @media screen and (max-width: $tablet-width) {
+    max-width: $content-width-mobile;
+    padding: 0 24px;
+    box-sizing: border-box;
+    margin: 0 auto 40px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    padding: 0 16px;
+  }
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+
+  @media screen and (max-width: $tablet-width) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.listItem {
+  color: $text-primary;
+}
+
+.listItemProcedure {
+  margin: 0 0 0.6rem;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 0 0 6px;
+  }
+}
+
+.listItemResult {
+  margin: 0;
+}
+
+.listItemImage {
+  width: 100%;
+  height: auto;
+  border-radius: 1.2rem;
+  margin: 0 0 1.2rem;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 0 0 12px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+}
+
+.sectionWrapper {
+  position: relative;
+}
+
+.fWordReversed {
+  bottom: -7rem;
+  left: -9rem;
+}

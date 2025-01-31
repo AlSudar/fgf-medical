@@ -1,0 +1,223 @@
+@import '/src/variables.module.scss';
+
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+
+  @media screen and (max-width: $tablet-width) {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.little {
+  gap: 1.6rem;
+  grid-template-columns: 1fr 1fr;
+
+  @media screen and (max-width: $tablet-width) {
+    gap: 16px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    row-gap: 24px;
+    column-gap: 16px;
+  }
+}
+
+.little .activeSpecialist {
+  grid-column: 1 / 3;
+}
+
+.big {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 2.4rem;
+  column-gap: 1.6rem;
+
+  @media screen and (max-width: $tablet-width) {
+    row-gap: 24px;
+    column-gap: 16px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.big .activeSpecialist {
+  grid-column: 1 / 5;
+
+  @media screen and (max-width: $tablet-width) {
+    grid-column: 1 / 4;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    grid-column: 1 / 3;
+  }
+}
+
+.listItemImage {
+  width: 100%;
+  height: auto;
+  border-radius: 1.2rem;
+  margin: 0 0 1.6rem;
+
+  @media screen and (max-width: $tablet-width) {
+    border-radius: 12px;
+    margin: 0 0 8px;
+    max-height: 176px;
+    object-fit: cover;
+  }
+}
+
+.listItemTitle {
+  margin: 0 0 0.6rem;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 0 0 2px;
+  }
+}
+
+.listItemText {
+  color: #7d868c;
+  margin: 0;
+}
+
+.activeSpecialist {
+  display: grid;
+  grid-template-columns: 41rem 1fr;
+  gap: 4.4rem;
+
+  @media screen and (max-width: $tablet-width) {
+    grid-template-columns: 240px 1fr;
+    gap: 16px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.activeSpecialistImage {
+  width: 100%;
+  height: 34rem;
+  object-fit: cover;
+  border-radius: 1.2rem;
+
+  @media screen and (max-width: $tablet-width) {
+    width: 100%;
+    height: 240px;
+    border-radius: 12px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.activeSpecialistContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-right: 3.2rem;
+  box-sizing: border-box;
+  color: $text-primary;
+
+  @media screen and (max-width: $tablet-width) {
+    padding-right: 0;
+  }
+}
+
+.activeSpecialistButton {
+  width: fit-content;
+
+  @media screen and (max-width: $mobile-width) {
+    width: 100%;
+  }
+}
+
+.activeSpecialistTitle {
+  margin: 0 0 1.2rem;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 0 0 8px;
+  }
+}
+
+.activeSpecialistSubtitle {
+  margin: 0 0 0.4rem;
+  color: #7d868c;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 0 0 4px;
+  }
+}
+
+.activeSpecialistSubtitle:last-of-type {
+  margin: 0;
+}
+
+.little .activeSpecialistText {
+  margin: 1.6rem 0;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 0 0 16px;
+  }
+}
+
+.big .activeSpecialistText {
+  margin: 2.4rem 0 1.2rem;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 16px 0 8px;
+  }
+}
+
+.big .activeSpecialistButton {
+  margin-top: 2.4rem;
+
+  @media screen and (max-width: $tablet-width) {
+    margin-top: 16px;
+  }
+}
+
+.activeSpecialistQuote {
+  padding: 1.2rem;
+  margin: 0;
+  background: #e4ddda;
+  border-radius: 1.2rem;
+
+  @media screen and (max-width: $tablet-width) {
+    padding: 12px;
+    border-radius: 12px;
+  }
+}
+
+.activeSpecialistText {
+  margin: 0 0 1.2rem;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 0 0 16px;
+  }
+}
+
+.primary {
+  @media screen and (max-width: $tablet-width) {
+    padding: 16px;
+    background: $background-accent;
+  }
+}
+
+.secondary {
+  background: transparent;
+}

@@ -1,0 +1,179 @@
+@import '/src/variables.module.scss';
+
+.wordF {
+  left: 6rem;
+  bottom: -6.4rem;
+
+  @media screen and (max-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.wordG {
+  right: 6rem;
+  top: -4rem;
+
+  @media screen and (max-width: $tablet-width) {
+    top: -80px;
+    right: 55px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    display: none;
+  }
+}
+
+.sectionWrapper {
+  position: relative;
+}
+
+.section {
+  margin: 12rem auto;
+  max-width: $content-width;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 60px auto;
+    padding: 0 16px;
+    max-width: $content-width-mobile;
+  }
+}
+
+.image {
+  position: absolute;
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  right: 0;
+  bottom: 0;
+
+  @media screen and (max-width: $tablet-width) {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.listServicesItem {
+  position: relative;
+  border-radius: 1.2rem;
+  background-color: $background-accent;
+  padding: 1.6rem;
+  box-sizing: border-box;
+  min-height: 22rem;
+
+  @media screen and (max-width: $tablet-width) {
+    padding: 16px;
+    min-height: 156px;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+  }
+}
+
+.listServices,
+.secondListServices {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1.6rem;
+
+  @media screen and (max-width: $tablet-width) {
+    gap: 12px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.secondListServices {
+  margin-top: 2rem;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media screen and (max-width: $tablet-width) {
+    margin-top: 12px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.listServices .listServicesItem:first-of-type {
+  grid-row: 1 / 3;
+  height: 100%;
+  min-height: 50rem;
+
+  @media screen and (max-width: $tablet-width) {
+    min-height: 156px;
+    grid-row: 1;
+  }
+}
+
+.listServices .listServicesItem:nth-of-type(2) {
+  grid-row: 1 / 3;
+  height: 100%;
+  min-height: 50rem;
+
+  @media screen and (max-width: $tablet-width) {
+    min-height: 156px;
+    grid-row: 1;
+  }
+}
+
+.listServicesItemLink {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.listServicesItemTitle {
+  padding: 0.6rem;
+  margin: 0;
+  color: $text-primary;
+  position: relative;
+  z-index: 2;
+  border-radius: 0.8rem;
+  width: fit-content;
+  background: #f1ece9;
+
+  @media screen and (max-width: $tablet-width) {
+    padding: 6px;
+    border-radius: 8px;
+  }
+}
+
+.listServicesItemButton {
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  margin: auto 0 0 auto;
+  padding: 1.6rem;
+  width: fit-content;
+  position: relative;
+
+  @media screen and (max-width: $tablet-width) {
+    padding: 11.5px 13.6px !important;
+    z-index: 1;
+    opacity: 1;
+  }
+}
+
+.listServicesItem:hover .listServicesItemButton {
+  opacity: 1;
+}
+
+.buttonElement {
+  padding-left: 0.8rem;
+  width: 0.6rem;
+  height: 1.1rem;
+
+  @media screen and (max-width: $tablet-width) {
+    padding: 0;
+    width: 6px;
+    height: 10px;
+  }
+}

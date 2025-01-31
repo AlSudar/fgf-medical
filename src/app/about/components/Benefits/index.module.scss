@@ -1,0 +1,105 @@
+@import '/src/variables.module.scss';
+
+.sectionWrapper {
+  position: relative;
+}
+
+.gWord {
+  position: absolute;
+  top: 10rem;
+  left: -22rem;
+  z-index: -1;
+
+  @media screen and (max-width: $mobile-width) {
+    left: auto;
+    top: auto;
+    bottom: -90px;
+    right: -30px;
+  }
+}
+
+.section {
+  position: relative;
+  z-index: 1;
+  margin: 12rem auto;
+  max-width: $content-width;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 60px auto;
+    padding: 0 16px;
+  }
+}
+
+.button {
+  width: fit-content;
+  margin: 2.4rem 0 0;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 24px 0 0;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    width: 100%;
+  }
+}
+
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.4rem;
+
+  @media screen and (max-width: $tablet-width) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.listItemImage {
+  width: 18rem;
+  height: 15.6rem;
+  margin: 0 0 1.6rem;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 0;
+    width: 100%;
+    height: auto;
+    grid-row: 1 / 3;
+  }
+}
+
+.listItemTitle {
+  margin: 0 0 1.6rem;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 0 0 16px;
+  }
+}
+
+.listItemText {
+  margin: 0;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 0;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    grid-column: 1/3;
+  }
+}
+
+.listItem {
+  @media screen and (max-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 126px 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 46px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    grid-template-columns: 36px 1fr;
+    column-gap: 16px;
+  }
+}

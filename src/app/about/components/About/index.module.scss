@@ -1,0 +1,148 @@
+@import '/src/variables.module.scss';
+
+.fWordReversed {
+  position: absolute;
+  right: 0;
+  top: -25rem;
+  z-index: -1;
+}
+
+.fWord {
+  position: absolute;
+  top: -20px;
+  right: 138px;
+
+  @media screen and (max-width: $tablet-width) {
+    top: auto;
+    bottom: 100px;
+    right: 0;
+    left: 50px;
+  }
+}
+
+.section {
+  position: relative;
+  padding-bottom: 12rem;
+
+  @media screen and (max-width: $tablet-width) {
+    padding-bottom: 60px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 65.6rem;
+    height: 60rem;
+    background: url('/pages/about/about/image.png') no-repeat center;
+    background-size: cover;
+
+    @media screen and (max-width: $tablet-width) {
+      width: 346px;
+      height: 426px;
+    }
+
+    @media screen and (max-width: $mobile-width) {
+      display: none;
+    }
+  }
+}
+
+.content {
+  max-width: $content-width;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+
+  @media screen and (max-width: $tablet-width) {
+    padding-left: 24px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    padding: 0 16px;
+  }
+}
+
+.title,
+.subtitle {
+  margin: 0 0 0.8rem;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 0 0 8px;
+  }
+}
+
+.lastSubtitle {
+  margin: 0 0 1.6rem;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 0 0 16px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    margin: 0 0 24px;
+  }
+}
+
+.desc {
+  margin: 0 0 1.6rem;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 0 0 16px;
+  }
+}
+
+.desc:last-of-type {
+  margin: 0 0 1.6rem;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 0 0 16px;
+  }
+}
+
+.title,
+.subtitle,
+.desc {
+  max-width: 51.8rem;
+
+  @media screen and (max-width: $tablet-width) {
+    max-width: 60%;
+  }
+
+  @media screen and (max-width: 680px) {
+    max-width: 50%;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    max-width: 100%;
+  }
+}
+
+.button {
+  margin: 1.6rem 0 0;
+  width: fit-content;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 16px 0 0;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: none;
+
+  @media screen and (max-width: $mobile-width) {
+    display: block;
+    width: 324px;
+    height: 280px;
+    object-fit: contain;
+    margin: 24px auto 0;
+  }
+}

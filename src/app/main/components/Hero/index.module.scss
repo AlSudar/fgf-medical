@@ -1,0 +1,140 @@
+@import '/src/variables.module.scss';
+
+.gWord {
+  display: none;
+
+  @media screen and (max-width: $mobile-width) {
+    display: block;
+    position: absolute;
+    top: -60px;
+    right: -40px;
+    z-index: -1;
+  }
+}
+
+.heroWrapper {
+  position: relative;
+}
+
+.heroImage {
+  background: url('/pages/main/hero/hero-desktop.png') no-repeat center;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  @media screen and (max-width: $tablet-width) {
+    background: url('/pages/main/hero/hero-mobile.png') no-repeat center;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 440px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    min-height: 420px;
+  }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  padding: 0 19rem;
+  color: $text-secondary-light;
+  box-sizing: border-box;
+
+  @media screen and (max-width: $tablet-width) {
+    color: $text-primary;
+    padding: 40px 16px 0;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    overflow: hidden;
+  }
+}
+
+.heroDesc {
+  padding: 29rem 0;
+  max-width: 58.4rem;
+
+  @media screen and (max-width: $tablet-width) {
+    padding: 0;
+    max-width: 100%;
+  }
+}
+
+.heroTitle {
+  margin: 0 0 1.2rem;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 0 0 24px;
+  }
+}
+
+.heroText {
+  margin: 0 0 2.4rem;
+  max-width: 44.2rem;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 0 0 20px;
+    max-width: 100%;
+  }
+}
+
+.heroList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2.4rem;
+  flex-wrap: wrap;
+  position: absolute;
+  left: 50%;
+  transform: translateY(-50%);
+  max-width: calc((100% - 38rem));
+  transform: translateX(-50%);
+  width: 100%;
+  bottom: 6rem;
+
+  @media screen and (max-width: $tablet-width) {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    flex-shrink: 0;
+    transform: translateY(0);
+    max-width: calc(100% + 16px);
+    width: calc(100% + 16px);
+    gap: 12px;
+    margin: 0;
+    padding: 0 0 20px;
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+  }
+}
+
+.heroListItem {
+  padding: 2rem;
+  border-radius: 0.8rem;
+  background: #c1ad9f22;
+
+  @media screen and (max-width: $tablet-width) {
+    padding: 12px 18px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    max-width: 220px;
+  }
+}
+
+.heroButton {
+  @media screen and (max-width: $mobile-width) {
+    width: 100%;
+  }
+}

@@ -1,0 +1,50 @@
+@import '/src/variables.module.scss';
+
+.wrapperSection {
+  position: relative;
+  z-index: 1;
+}
+
+.gWord {
+  position: absolute;
+  left: -12.2rem;
+  bottom: 2.6rem;
+  z-index: -1;
+}
+
+.section {
+  position: relative;
+  margin: 0 auto 12rem;
+  max-width: $content-width;
+
+  @media screen and (max-width: $tablet-width) {
+    margin: 0 auto 60px;
+    // max-width: $content-width-mobile;
+  }
+}
+
+.title,
+.linkAllSpec {
+  @media screen and (max-width: $tablet-width) {
+    padding: 0 16px;
+  }
+}
+
+.fWord {
+  right: 60px;
+  bottom: -256px;
+  position: absolute;
+  z-index: -1;
+
+  @media screen and (max-width: $mobile-width) {
+    right: 0;
+    bottom: -360px;
+  }
+}
+
+.fWordReversed {
+  position: absolute;
+  right: 6rem;
+  z-index: -1;
+  top: -39rem;
+}

@@ -1,0 +1,100 @@
+@import './variables.module.scss';
+
+.headerFirstFontSize {
+  font-weight: 400;
+  font-size: 4.4rem;
+  line-height: 5.2rem;
+
+  @media screen and (max-width: $tablet-width) {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
+.headerSecondFontSize {
+  font-weight: 700;
+  font-size: 2.8rem;
+  line-height: 3.2rem;
+
+  @media screen and (max-width: $tablet-width) {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+.headerThirdFontSize {
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.4rem;
+
+  @media screen and (max-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+.headerThirdAdaptiveFontSize {
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.4rem;
+
+  @media screen and (max-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.headerFourFontSize {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+
+  @media screen and (max-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.bodyFirstRegularFontSize {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2rem;
+
+  @media screen and (max-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.bodyFirstSemiboldFontSize {
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2rem;
+
+  @media screen and (max-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.bodySecondFontSize {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+
+  @media screen and (max-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.bodyThirdFontSize {
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+
+  @media screen and (max-width: $tablet-width) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}

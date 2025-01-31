@@ -1,0 +1,94 @@
+@import '/src/variables.module.scss';
+
+.fade {
+  position: absolute;
+}
+
+.wrapper {
+  transition: 1s ease-in-out all;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.firstBlock {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  background: $background-default;
+  top: 0;
+  left: 0;
+}
+
+.secondBlock {
+  position: absolute;
+  height: 48%;
+  width: 100%;
+  background: $background-default;
+  bottom: 0;
+  right: 0;
+}
+
+.thirdBlock {
+  position: absolute;
+  height: 5%;
+  width: 50%;
+  background: $background-default;
+  bottom: 46%;
+  transform: translateY(50%);
+  left: 50%;
+}
+
+.active .firstBlock {
+  animation: firstBlock 1s linear 1s 1 normal;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+  animation-duration: 2s;
+}
+
+.active .secondBlock {
+  animation: secondBlock 1s linear 1s 1 normal;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+  animation-duration: 2s;
+}
+
+.active .thirdBlock {
+  animation: secondBlock 1s linear 1s 1 normal;
+  animation-fill-mode: forwards;
+  animation-delay: 4s;
+  animation-duration: 1s;
+}
+
+@keyframes firstBlock {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0;
+  }
+}
+
+@keyframes secondBlock {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0;
+  }
+}
+
+@keyframes thirdBlock {
+  from {
+    width: 50%;
+  }
+
+  to {
+    width: 0;
+  }
+}

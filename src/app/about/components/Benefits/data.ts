@@ -1,4 +1,4 @@
-interface BenefitI {
+export interface BenefitI {
   title: string;
   desc: string;
 }
@@ -18,4 +18,4 @@ const MOCK_BENEFITS: BenefitI[] = [
   },
 ];
 
-export { MOCK_BENEFITS, BenefitI };
+export { MOCK_BENEFITS };

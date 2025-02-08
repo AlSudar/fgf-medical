@@ -3,9 +3,9 @@ export interface SpecialistI {
   name: string;
   lastName: string;
   speciality: string;
-  experience: string;
-  desc: string;
-  img: string;
+  experience?: string;
+  desc?: string;
+  imgSrc?: string;
   quote?: string;
 }
 

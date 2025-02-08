@@ -50,7 +50,7 @@ const ListItem = ({
           width={211}
           height={196}
           alt={`${item.name} ${item.lastName}`}
-          src={item.img}
+          src={item.imgSrc ?? '/components/specialist/default-photo.png'}
           className={styles.listItemImage}
         />
         <p
@@ -90,7 +90,7 @@ const ActiveSpecialist = ({
         width={406}
         height={336}
         alt={`${specialist.name} ${specialist.lastName}`}
-        src={specialist.img}
+        src={specialist.imgSrc ?? '/components/specialist/default-photo.png'}
         className={styles.activeSpecialistImage}
       />
       <div className={styles.activeSpecialistContent}>
@@ -121,15 +121,16 @@ const ActiveSpecialist = ({
         >
           {specialist.speciality}
         </p>
-        <p
-          className={cn(
-            styles.activeSpecialistText,
-            commonStyles.bodyFirstRegularFontSize,
-            bodyFont.className
-          )}
-        >
-          {specialist.desc}
-        </p>
+        {specialist.desc && (
+          <p
+            className={cn(
+              styles.activeSpecialistText,
+              commonStyles.bodyFirstRegularFontSize,
+              bodyFont.className
+            )}
+            dangerouslySetInnerHTML={{ __html: specialist.desc }}
+          />
+        )}
         {withQuote && specialist.quote && (
           <p
             className={cn(

@@ -8,13 +8,28 @@ import useWindowDimensions from '@/hooks/useWindowSize';
 import { MOBILE_WIDTH, TABLET_WIDTH } from '@/constants/data';
 import { FWord } from '@/shared/Animations/FWord';
 import { GWord } from '@/shared/Animations/GWord';
+import { getSpecialistOnMainPage } from '@/api/specialistOnMainPage';
+import { useState, useEffect } from 'react';
 
 const List = () => {
-  const advancedSpecialists: AdvancedSpecialistI[] = [];
   const { width } = useWindowDimensions();
-  MOCK_SPECIALISTS.forEach((item, id) => {
-    advancedSpecialists.push({ ...item, positionOnList: (id += 1) });
-  });
+  const [specialistData, setSpecialistsData] =
+    useState<AdvancedSpecialistI[]>();
+
+  useEffect(() => {
+    (async () => {
+      const data = await getSpecialistOnMainPage();
+      if (data.data) {
+        setSpecialistsData(
+          data.data[0].specialists.map((item: any, id: number) => ({
+            ...item,
+            positionOnList: (id += 1),
+          }))
+        );
+      }
+    })();
+  }, []);
+
   const gWordSizes = width && {
     width: width < MOBILE_WIDTH ? 164 : width > TABLET_WIDTH ? 51 : 380,
     heigth: width < MOBILE_WIDTH ? 164 : width > TABLET_WIDTH ? 51 : 380,
@@ -28,11 +43,9 @@ const List = () => {
         )}
         {gWordSizes && <GWord sizes={gWordSizes} className={styles.gWord} />}
         <SectionTitle text='Специалисты' />
-        <ListSpecialists
-          withQuote
-          size='big'
-          specialists={advancedSpecialists}
-        />
+        {specialistData && (
+          <ListSpecialists withQuote size='big' specialists={specialistData} />
+        )}
       </section>
     </div>
   );

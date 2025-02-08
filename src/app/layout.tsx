@@ -4,7 +4,7 @@ import '@/reset.css';
 import { DEFAULT_SEO } from './page';
 import React from 'react';
 import '@/variables.module.scss';
-import RootTemplate from './template';
+import 'swiper/css';
 
 export const metadata: Metadata = { ...DEFAULT_SEO };
 

@@ -14,6 +14,7 @@ const GWord = ({ className, sizes }: WordI) => {
     const currentSizeUnit = width <= TABLET_WIDTH ? 'px' : 'rem';
     return (
       <Fade
+        fraction={0.5}
         triggerOnce={true}
         className={cn(styles.fade, className)}
         childClassName={styles.active}

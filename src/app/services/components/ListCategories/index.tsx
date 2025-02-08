@@ -1,6 +1,5 @@
 'use client';
 import { Button } from '@/components/Button';
-import { CategoryI, MOCK_CATEGORIES } from '../data';
 import styles from './index.module.scss';
 import commonStyles from '@/common.module.scss';
 import Image from 'next/image';
@@ -11,15 +10,21 @@ import { headingFont } from '@/assets/fonts';
 import { FadeConfig } from '@/components/FadeConfig';
 import useWindowDimensions from '@/hooks/useWindowSize';
 import { TABLET_WIDTH } from '@/constants/data';
+import { useEffect, useState } from 'react';
+import { getListCategories } from '@/api/listCategories';
+import { CategoryServicesI } from '@/api/listCategories/type';
 
-const CategoryItem = ({ item }: { item: CategoryI }) => {
-  const router = useRouter();
+const CategoryItem = ({ category }: { category: CategoryServicesI }) => {
   const { width } = useWindowDimensions();
 
   return (
     <li className={styles.categoryItem}>
       <Image
-        src={item.image}
+        src={
+          width && width > TABLET_WIDTH
+            ? category.imageSrc
+            : category.imageTabletSrc
+        }
         className={styles.categoryItemImage}
         width={100}
         height={100}
@@ -31,11 +36,22 @@ const CategoryItem = ({ item }: { item: CategoryI }) => {
           commonStyles.headerThirdAdaptiveFontSize,
           headingFont.className
         )}
-        dangerouslySetInnerHTML={{ __html: item.title }}
+        dangerouslySetInnerHTML={{ __html: category.title }}
       />
       <Button
         type='primary-light'
-        onClick={() => router.push(`#${item.href}`)}
+        onClick={() => {
+          document.querySelectorAll('.category').forEach((item) => {
+            if (item.id === category.categoryLink) {
+              window.location.hash = category.categoryLink;
+              item.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+                inline: 'nearest',
+              });
+            }
+          });
+        }}
         className={styles.categoryItemButton}
         text={width && width > TABLET_WIDTH ? 'Подробнее' : ''}
         actionElement={
@@ -53,22 +69,34 @@ const CategoryItem = ({ item }: { item: CategoryI }) => {
 };
 
 const ListCategories = () => {
-  const evenNumber = MOCK_CATEGORIES.length % 2 === 0;
+  const [listCategoriesData, setListCategoriesData] =
+    useState<CategoryServicesI[]>();
+  const evenNumber = listCategoriesData && listCategoriesData.length % 2 === 0;
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await getListCategories();
+
+      if (data) {
+        setListCategoriesData(data);
+      }
+    })();
+  }, []);
 
   return (
     <section id='activateHeader' className={styles.sectionWrapper}>
-      {MOCK_CATEGORIES && MOCK_CATEGORIES.length > 0 && (
+      {listCategoriesData && listCategoriesData.length > 0 && (
         <div className={styles.section}>
           <SectionTitle type='secondary' text='Все виды услуг' />
           <ul className={cn(styles.list, !evenNumber && styles.listEven)}>
-            {MOCK_CATEGORIES.map((item, id) => {
+            {listCategoriesData.map((item, id) => {
               if (id < 6) {
-                return <CategoryItem item={item} key={id} />;
+                return <CategoryItem category={item} key={id} />;
               }
 
               return (
                 <FadeConfig key={id}>
-                  <CategoryItem item={item} key={id} />
+                  <CategoryItem category={item} key={id} />
                 </FadeConfig>
               );
             })}

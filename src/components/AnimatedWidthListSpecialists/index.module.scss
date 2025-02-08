@@ -30,24 +30,22 @@
   transition: 1s ease-in-out all;
   border-radius: 1.2rem;
   width: 100%;
-  height: 41.2rem;
+  height: 38.2rem;
   object-fit: cover;
 }
 
-.itemContent {
+.itemContentWrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
   box-sizing: border-box;
-  background: $background-accent;
+  background: #f0ebe8;
   position: absolute;
-  width: 22.8rem;
+  width: 23.2rem;
   left: 0;
   top: 0;
   height: 100%;
   border-radius: 0 1.2rem 1.2rem 0;
-  padding: 1.2rem 1.4rem 1.2rem 2.4rem;
   transition: 1s ease-in-out all;
   overflow: hidden;
   z-index: -1;
@@ -88,14 +86,26 @@
     height: 100%;
   }
 
-  .itemContent {
-    padding: 1.6rem;
+  .itemContentWrapper {
+    overflow-y: scroll;
+    z-index: 1;
     left: 23.6rem;
+    justify-content: flex-start;
+  }
+
+  .itemContent {
+    position: absolute;
+    top: 25%;
+    padding: 1.6rem 1.6rem 1.6rem 2.4rem;
   }
 }
 
 .itemBottomContentTitle {
   margin: 0 0 0.8rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; // количество строк
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .itemBottomContent {
@@ -107,6 +117,7 @@
   width: 100%;
   width: 19rem;
   padding: 1.2rem;
+  max-height: 12rem;
 }
 
 .itemInactive {

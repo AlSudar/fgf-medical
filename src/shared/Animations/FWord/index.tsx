@@ -14,6 +14,8 @@ const FWord = ({ className, sizes }: WordI) => {
     const currentSizeUnit = width <= TABLET_WIDTH ? 'px' : 'rem';
     return (
       <Fade
+        triggerOnce={true}
+        fraction={0.5}
         style={{
           width: `${sizes.width}${currentSizeUnit}`,
           height: `${sizes.heigth}${currentSizeUnit}`,

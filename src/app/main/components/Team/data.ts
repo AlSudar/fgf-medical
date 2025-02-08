@@ -8,7 +8,7 @@ export const MOCK: SpecialistI[] = [
     speciality: 'Основатель клиники FGF medical. Врач-дерматолог, косметолог',
     experience: '13 лет',
     desc: 'lorem loremlor emloremlore  mloremloremlo remloremloreml oremloremloremlo  remlor emlorem',
-    img: '/pages/main/team/banner.png',
+    imgSrc: '/pages/main/team/banner.png',
   },
   {
     id: '2',
@@ -17,7 +17,7 @@ export const MOCK: SpecialistI[] = [
     speciality: 'Главный врач. Врач-дерматолог, косметолог',
     experience: '0 лет',
     desc: 'lorem loremlor emloremlore  mloremloremlo remloremloreml oremloremloremlo  remlor emlorem',
-    img: '/pages/main/team/banner.png',
+    imgSrc: '/pages/main/team/banner.png',
   },
   {
     id: '3',
@@ -27,6 +27,6 @@ export const MOCK: SpecialistI[] = [
       'Дерматовенеролог, косметолог, терапевт, врач превентивной медицины',
     experience: '0 лет',
     desc: 'lorem loremlor emloremlore  mloremloremlo remloremloreml oremloremloremlo  remlor emlorem',
-    img: '/pages/main/team/banner.png',
+    imgSrc: '/pages/main/team/banner.png',
   },
 ];

@@ -40,6 +40,7 @@ const Products = () => {
         </p>
         <Button text='Смотреть' className={styles.button} />
       </div>
+      <div className={styles.swiper}></div>
     </section>
   );
 };
